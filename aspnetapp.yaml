@@ -9,7 +9,7 @@ spec:
   - image: "mcr.microsoft.com/dotnet/core/samples:aspnetapp"
     name: aspnetapp-image
     ports:
-    - containerPort: 80
+    - containerPort: 8080
       protocol: TCP
 
 ---
@@ -23,8 +23,8 @@ spec:
     app: aspnetapp
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 8080
+    targetPort: 8080
 
 ---
 
@@ -43,5 +43,5 @@ spec:
           service:
             name: aspnetapp
             port:
-              number: 80
+              number: 8080
         pathType: Exact
